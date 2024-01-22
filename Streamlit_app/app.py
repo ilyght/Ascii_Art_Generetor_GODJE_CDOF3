@@ -1,6 +1,5 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
+from art import text2art
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
@@ -12,11 +11,12 @@ st.set_page_config(
 
 st.title("Ascii Art Generator (by Nadia Godje)🎨🎨🎨")
 
-text=st.text_input('Entrez un mot')
+text=st.text_input('Entrez un texte')
 
-text_color = st.color_picker("Choisissez la couleur du mot ", "#000000")
-styled_text = f"<p style='color:{text_color}; font-size: 24px;'>{text}</p>"
+art_style = st.selectbox("Choisissez le style d'art ASCII :", ["block", "block2", "caligraphy"])
+
+ascii_art = text2art(text, font=art_style)
+
 
 if st.button("Valider"):
-    st.write(styled_text, unsafe_allow_html=True)
-
+    st.text_area('Votre texte en ascii',value=ascii_art, height=300)

@@ -1,0 +1,23 @@
+import streamlit as st
+from art import text2art
+
+def create_ascii_art():
+    # Titre
+    st.title("Transformateur de Texte en Art ASCII")
+
+    # Zone de texte pour l'utilisateur
+    user_text = st.text_input("Entrez votre texte :")
+
+    # Choix du style d'art ASCII
+    art_style = st.selectbox("Choisissez le style d'art ASCII :", ["block", "block2", "caligraphy", "block", "block2", "caligraphy"])
+
+    # Génération de l'art ASCII
+    ascii_art = text2art(user_text, font=art_style)
+
+    # Affichage de l'art ASCII
+    st.text_area("Art ASCII généré :", value=ascii_art, height=10)
+
+if __name__ == "__main__":
+    create_ascii_art()
+
+
