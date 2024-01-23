@@ -19,4 +19,6 @@ ascii_art = text2art(text, font=art_style)
 
 
 if st.button("Valider"):
-    st.text_area('Votre texte en ascii',value=ascii_art, height=300)
+    #st.text_area('Votre texte en ascii',value=ascii_art, height=300)
+    st.markdown(f'```{ascii_art}```', unsafe_allow_html=True)
+
