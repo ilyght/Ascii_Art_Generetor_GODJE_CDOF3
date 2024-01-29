@@ -13,7 +13,7 @@ st.title("Ascii Art Generator (by Nadia Godje)🎨🎨🎨")
 
 text=st.text_input('Entrez un texte')
 
-art_style = st.selectbox("Choisissez le style d'art ASCII :", ["block", "block2", "caligraphy"])
+art_style = st.selectbox("Choisissez le style d'art ASCII :", ["block", "block2", "caligraphy","fancy5"])
 
 ascii_art = text2art(text, font=art_style)
 
